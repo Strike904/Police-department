@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04070e">
+<title>ROLL | الرتب والقطاعات الرسمية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04070e;
+  --panel:rgba(13,22,38,.72);
+  --line:rgba(125,158,210,.15);
+  --line-strong:rgba(125,158,210,.28);
+  --text:#eef2f9;
+  --muted:#8b98ae;
+  --red:#3b82f6;
+  --red-2:#1e3a8a;
+  --gold:#c39a4a;
+  --steel:#2a6bb8;
+  --fire:#e0562a;
+  --ems:#3ec46a;
+  --r-xs:12px; --r-sm:16px; --r:22px; --r-lg:30px; --r-xl:38px; --pill:999px;
+  --shadow:0 26px 60px -34px rgba(0,0,0,.95);
+  --glow-red:0 18px 45px -20px rgba(59,130,246,.85);
+  --glow-steel:0 18px 45px -22px rgba(42,107,184,.85);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  margin:0;
+  font-family:'Tajawal',system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(1100px 620px at 85% -8%, rgba(59,130,246,.18), transparent 62%),
+    radial-gradient(900px 560px at 8% 6%, rgba(30,58,138,.18), transparent 60%),
+    radial-gradient(1000px 700px at 50% 110%, rgba(96,165,250,.08), transparent 65%),
+    var(--bg);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+::selection{background:var(--red);color:#fff}
+
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#060a13}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--red-2),#2a3550);border-radius:999px;border:2px solid #060a13}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+section{padding:90px 0}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:14px;z-index:80;max-width:1240px;margin:14px auto 0;padding:0 16px}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:11px 14px 11px 20px;border-radius:var(--pill);
+  background:rgba(8,13,24,.78);backdrop-filter:blur(20px) saturate(140%);
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:21px;letter-spacing:2.5px}
+.logo .mark{
+  width:40px;height:40px;border-radius:14px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--red),var(--red-2));
+  font-size:18px;font-weight:900;color:#fff;letter-spacing:0;
+  box-shadow:var(--glow-red);
+}
+.logo span{color:var(--red)}
+.navlinks{display:none;gap:6px;font-size:14.5px;font-weight:700}
+.navlinks a{color:var(--muted);padding:9px 16px;border-radius:var(--pill);transition:.25s}
+.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+@media(min-width:900px){.navlinks{display:flex}}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.nav-actions .btn{padding:11px 22px;font-size:13.5px}
+.burger{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;border-radius:var(--pill);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);cursor:pointer;
+  align-items:center;transition:.25s;
+}
+.burger span{width:18px;height:2px;border-radius:2px;background:var(--text);transition:.3s}
+.burger:hover{background:rgba(255,255,255,.1)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:900px){.burger{display:none}}
+.mobile-menu{
+  display:none;flex-direction:column;gap:4px;margin-top:10px;padding:12px;
+  border-radius:var(--r-lg);background:rgba(8,13,24,.95);
+  backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.mobile-menu.open{display:flex;animation:dropIn .35s cubic-bezier(.2,.7,.3,1)}
+@keyframes dropIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.mobile-menu a{padding:13px 18px;border-radius:var(--r-sm);color:var(--muted);font-weight:700;transition:.22s}
+.mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 30px;border-radius:var(--pill);
+  font-weight:800;font-size:15px;border:1px solid transparent;
+  cursor:pointer;transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s, background .28s;
+  white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;box-shadow:var(--glow-red)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 26px 55px -20px rgba(59,130,246,.9)}
+.btn-ghost{background:rgba(255,255,255,.045);border-color:var(--line);color:var(--text);backdrop-filter:blur(10px)}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(255,255,255,.09);border-color:var(--line-strong)}
+
+/* ===== Hero ===== */
+.hero{padding:26px 0 0}
+.hero-card{
+  position:relative;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+  padding:90px 24px 56px;text-align:center;
+  background:
+    linear-gradient(180deg,rgba(6,10,20,.62) 0%,rgba(5,8,16,.88) 55%,rgba(4,7,14,.98) 100%),
+    url('https://cdn.discordapp.com/attachments/1500562653758885888/1553407894878167165/image.png?ex=6ab92357&is=6ab7d1d7&hm=6d2d40c41d28e730f3f87f70c909ebe99bc28a5f0a9dc8b901c69b0ac8912a6b&') center/cover no-repeat,
+    linear-gradient(135deg,#0a1220,#04070e);
+}
+.hero-card::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 300px at 50% 0%, rgba(59,130,246,.25), transparent 70%),
+    radial-gradient(500px 260px at 80% 100%, rgba(30,58,138,.85), transparent 70%);
+}
+.hero-card::after{
+  content:'';position:absolute;left:0;right:0;top:0;height:5px;
+  background:linear-gradient(90deg,var(--steel) 0 33%,var(--gold) 33% 41%,var(--red) 41% 100%);
+  opacity:.9;
+}
+.hero-card>*{position:relative;z-index:2}
+.seal{
+  width:88px;height:88px;margin:0 auto 24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;position:relative;
+  background:radial-gradient(circle at 30% 25%, rgba(195,154,74,.22), rgba(4,7,14,.9));
+  border:2px solid var(--gold);
+  box-shadow:0 0 0 8px rgba(195,154,74,.07), 0 20px 50px -20px rgba(195,154,74,.6);
+}
+.seal::before{content:'';position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(195,154,74,.55)}
+.seal b{font-size:30px;font-weight:900;color:var(--gold);letter-spacing:1px}
+.eyebrow{
+  display:inline-block;color:rgba(59,130,246,.9);font-weight:800;font-size:13px;letter-spacing:.6px;
+  margin-bottom:18px;padding:8px 20px;border-radius:var(--pill);
+  background:rgba(195,154,74,.08);border:1px solid rgba(195,154,74,.28);
+}
+.hero h1{font-size:clamp(36px,6.8vw,70px);font-weight:900;line-height:1.22;margin:0 0 18px;letter-spacing:-1px}
+.hero p{color:#a7b3c7;max-width:600px;margin:0 auto 32px;font-size:16.5px}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:56px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{
+  background:rgba(13,22,38,.6);backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:var(--r);
+  padding:24px 12px;text-align:center;transition:.3s;
+}
+.stat:hover{transform:translateY(-4px);border-color:var(--line-strong);background:rgba(20,32,54,.75)}
+.stat b{
+  display:block;font-size:clamp(24px,3.2vw,32px);font-weight:900;
+  background:linear-gradient(135deg,rgba(59,130,246,.95),var(--red));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1.3;
+}
+.stat span{color:var(--muted);font-size:13px;font-weight:500}
+
+/* ===== Section head ===== */
+.shead{max-width:700px;margin:0 auto 46px;text-align:center}
+.shead .tag{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--gold);font-weight:800;font-size:12.5px;letter-spacing:1px;
+  padding:7px 18px;border-radius:var(--pill);
+  background:rgba(195,154,74,.08);border:1px solid rgba(195,154,74,.25);
+  margin-bottom:16px;
+}
+.shead .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+.shead h2{font-size:clamp(28px,4.4vw,42px);font-weight:900;margin:0;line-height:1.35;letter-spacing:-.5px}
+.shead p{color:var(--muted);margin:14px 0 0;font-size:15.5px}
+
+/* ===== Operations Center ===== */
+.ops-section{padding:40px 0 70px;position:relative}
+.ops-card{
+  position:relative;
+  border:1px solid var(--line);border-radius:var(--r-xl);
+  background:
+    radial-gradient(600px 300px at 100% 0%, rgba(59,130,246,.14), transparent 60%),
+    linear-gradient(180deg, rgba(13,22,38,.85), rgba(6,10,20,.9));
+  backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);
+  padding:44px 30px 48px;
+  overflow:visible;
+}
+.ops-card::after{
+  content:'';position:absolute;left:0;right:0;top:0;height:4px;
+  border-radius:var(--r-xl) var(--r-xl) 0 0;
+  background:linear-gradient(90deg,var(--steel) 0 33%,var(--gold) 33% 41%,var(--red) 41% 100%);
+  opacity:.9;
+}
+
+.ops-chip{
+  position:absolute;z-index:3;
+  border-radius:var(--r);
+  padding:14px 20px;text-align:center;
+  background:linear-gradient(180deg, rgba(10,18,34,.95), rgba(6,10,20,.95));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 22px 45px -22px rgba(59,130,246,.9), inset 0 0 20px rgba(59,130,246,.10);
+  min-width:118px;
+}
+.ops-chip .num{
+  font-size:24px;font-weight:900;color:#60a5fa;
+  letter-spacing:-.5px;line-height:1.1;
+  text-shadow:0 0 22px rgba(96,165,250,.55);
+}
+.ops-chip .num small{font-size:14px;font-weight:800;opacity:.85;margin-right:1px}
+.ops-chip .lbl{
+  font-size:10.5px;font-weight:800;letter-spacing:3px;
+  color:#93b8dd;margin-top:6px;
+}
+.ops-chip.uptime{top:-16px;right:-8px}
+.ops-chip.support{bottom:-16px;left:-8px}
+
+.ops-head{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-bottom:28px;flex-wrap:wrap;
+}
+.ops-head .r-icon{
+  width:46px;height:46px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--red),var(--red-2));
+  color:#fff;flex-shrink:0;
+  box-shadow:var(--glow-red);
+}
+.ops-head .r-icon svg{width:24px;height:24px}
+.ops-head h2{
+  font-size:clamp(22px,3.2vw,30px);font-weight:900;margin:0;
+}
+
+/* Video */
+.ops-video{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line-strong);
+  background:#05070d;
+  aspect-ratio:16/9;width:100%;
+  margin-bottom:30px;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.95);
+}
+.ops-video iframe,
+.ops-video video{
+  width:100%;height:100%;display:block;border:0;
+  position:relative;z-index:1;
+}
+.ops-video .video-note{
+  position:absolute;bottom:12px;right:14px;z-index:2;
+  font-size:11.5px;color:#cfd8e8;font-weight:700;
+  background:rgba(4,7,14,.72);border:1px solid var(--line);
+  padding:6px 12px;border-radius:var(--pill);
+  backdrop-filter:blur(8px);
+}
+
+/* Units list */
+.ops-list{display:flex;flex-direction:column;gap:12px}
+.ops-unit{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 20px;border-radius:var(--r-lg);
+  background:rgba(13,22,38,.65);
+  border:1px solid var(--line);
+  transition:.3s cubic-bezier(.2,.7,.3,1);
+}
+.ops-unit:hover{
+  border-color:var(--line-strong);
+  background:rgba(20,34,58,.85);
+  transform:translateY(-2px);
+}
+.ops-badge{
+  flex-shrink:0;
+  padding:7px 14px;border-radius:var(--pill);
+  font-size:11.5px;font-weight:900;letter-spacing:.3px;
+  border:1px solid transparent;
+}
+.ops-badge.available{
+  background:rgba(62,196,106,.14);color:#8ce0a8;
+  border-color:rgba(62,196,106,.4);
+}
+.ops-badge.busy{
+  background:rgba(195,154,74,.14);color:#e9c07a;
+  border-color:rgba(195,154,74,.4);
+}
+.ops-badge.offline{
+  background:rgba(59,130,246,.14);color:#93c5fd;
+  border-color:rgba(59,130,246,.4);
+}
+.ops-info{flex:1;text-align:right;min-width:0}
+.ops-info h3{font-size:15.5px;font-weight:900;margin:0 0 2px;letter-spacing:.2px}
+.ops-info p{font-size:12.5px;color:var(--muted);margin:0}
+.ops-unit-icon{
+  width:52px;height:52px;border-radius:var(--r-sm);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#14213a,#0a1120);
+  border:1px solid var(--line-strong);
+}
+.ops-unit-icon svg{width:24px;height:24px}
+.ops-unit-icon.police{color:#7fb3ee}
+.ops-unit-icon.medic{color:#7fc8ff}
+.ops-unit-icon.fire{color:var(--fire)}
+
+@media(max-width:720px){
+  .ops-chip{position:static;display:inline-block;margin:6px;min-width:0}
+  .ops-chip-wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+  .ops-unit{flex-wrap:wrap;justify-content:center;text-align:center;gap:12px}
+  .ops-info{text-align:center;flex:1 1 100%;order:3}
+  .ops-unit-icon{order:1}
+  .ops-badge{order:2}
+}
+
+/* ===== Sector tabs ===== */
+.sector-tabs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.stab{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 26px;border-radius:var(--pill);
+  background:rgba(13,22,38,.7);border:1px solid var(--line);
+  color:var(--muted);font-size:15px;font-weight:800;cursor:pointer;
+  transition:.3s cubic-bezier(.2,.7,.3,1);backdrop-filter:blur(10px);
+}
+.stab svg{width:20px;height:20px}
+.stab:hover{color:var(--text);transform:translateY(-3px);border-color:var(--line-strong)}
+.stab.active{
+  background:linear-gradient(135deg,var(--steel),#123a66);
+  color:#fff;border-color:transparent;box-shadow:var(--glow-steel);
+}
+.stab.active.gold{background:linear-gradient(135deg,var(--gold),#8a6a24);color:#140f03;box-shadow:0 18px 45px -22px rgba(195,154,74,.9)}
+.stab.active.fire{background:linear-gradient(135deg,var(--fire),#7a2a12);color:#fff;box-shadow:0 18px 45px -22px rgba(224,86,42,.9)}
+.stab.active.ems{background:linear-gradient(135deg,var(--ems),#1d6b39);color:#fff;box-shadow:0 18px 45px -22px rgba(62,196,106,.9)}
+
+/* ===== Sector panel ===== */
+.sector-panel{display:none}
+.sector-panel.active{display:block;animation:fadeUp .5s cubic-bezier(.2,.7,.3,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.sector-header{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:22px 26px;border-radius:var(--r-lg);
+  background:linear-gradient(135deg,rgba(42,107,184,.14),rgba(13,22,38,.7));
+  border:1px solid rgba(42,107,184,.3);
+  margin-bottom:26px;
+}
+.sector-header.gold-theme{background:linear-gradient(135deg,rgba(195,154,74,.14),rgba(13,22,38,.7));border-color:rgba(195,154,74,.3)}
+.sector-header.fire-theme{background:linear-gradient(135deg,rgba(224,86,42,.14),rgba(13,22,38,.7));border-color:rgba(224,86,42,.3)}
+.sector-header.ems-theme{background:linear-gradient(135deg,rgba(62,196,106,.14),rgba(13,22,38,.7));border-color:rgba(62,196,106,.3)}
+.sh-icon{
+  width:60px;height:60px;border-radius:var(--r-sm);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#14213a,#0a1120);
+  border:1px solid var(--line-strong);color:#7fb3ee;
+}
+.sector-header.gold-theme .sh-icon{color:var(--gold);border-color:rgba(195,154,74,.45)}
+.sector-header.fire-theme .sh-icon{color:var(--fire);border-color:rgba(224,86,42,.45)}
+.sector-header.ems-theme .sh-icon{color:var(--ems);border-color:rgba(62,196,106,.45)}
+.sh-icon svg{width:28px;height:28px}
+.sh-info{flex:1;min-width:200px}
+.sh-info h3{font-size:20px;font-weight:900;margin:0 0 4px}
+.sh-info p{color:var(--muted);font-size:13.5px;margin:0}
+.sh-stats{display:flex;gap:10px;flex-wrap:wrap}
+.sh-stat{
+  padding:8px 16px;border-radius:var(--pill);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  font-size:12.5px;font-weight:700;color:var(--muted);
+}
+.sh-stat b{color:var(--text);font-weight:900;margin-right:4px}
+
+/* ===== Rank list ===== */
+.rank-list{display:flex;flex-direction:column;gap:14px}
+.rank-row{
+  position:relative;
+  display:grid;
+  grid-template-columns:56px 90px 1.35fr 1.5fr auto;
+  gap:22px;align-items:center;
+  padding:20px 24px;
+  background:rgba(13,22,38,.62);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  backdrop-filter:blur(12px);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1), border-color .35s, box-shadow .35s, background .35s;
+}
+.rank-row::before{
+  content:'';position:absolute;right:0;top:22px;bottom:22px;width:3px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),transparent);
+  opacity:.7;
+}
+.rank-row:hover{
+  border-color:var(--line-strong);
+  background:rgba(20,34,58,.78);
+  transform:translateY(-3px);
+  box-shadow:0 30px 60px -34px rgba(0,0,0,1);
+}
+.rank-row.mil::before{background:linear-gradient(180deg,#7fb3ee,transparent)}
+.rank-row.fire::before{background:linear-gradient(180deg,var(--fire),transparent)}
+.rank-row.ems::before{background:linear-gradient(180deg,var(--ems),transparent)}
+
+.rr-num{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:15px;color:var(--muted);
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+}
+.rank-row:hover .rr-num{color:var(--gold);border-color:rgba(195,154,74,.4)}
+.rank-row.mil:hover .rr-num{color:#7fb3ee;border-color:rgba(42,107,184,.5)}
+.rank-row.fire:hover .rr-num{color:var(--fire);border-color:rgba(224,86,42,.5)}
+.rank-row.ems:hover .rr-num{color:var(--ems);border-color:rgba(62,196,106,.5)}
+
+.rr-insignia{
+  width:80px;height:80px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#132038,#0a1120);
+  border:1px solid var(--line-strong);
+  color:var(--gold);flex-shrink:0;
+  transition:.35s;
+}
+.rank-row.mil .rr-insignia{color:#7fb3ee}
+.rank-row.fire .rr-insignia{color:var(--fire)}
+.rank-row.ems .rr-insignia{color:var(--ems)}
+.rank-row:hover .rr-insignia{box-shadow:0 0 0 6px rgba(195,154,74,.07);border-color:rgba(195,154,74,.45)}
+.rank-row.mil:hover .rr-insignia{box-shadow:0 0 0 6px rgba(42,107,184,.09);border-color:rgba(42,107,184,.5)}
+.rank-row.fire:hover .rr-insignia{box-shadow:0 0 0 6px rgba(224,86,42,.09);border-color:rgba(224,86,42,.5)}
+.rank-row.ems:hover .rr-insignia{box-shadow:0 0 0 6px rgba(62,196,106,.09);border-color:rgba(62,196,106,.5)}
+.rr-insignia svg{width:52px;height:52px}
+
+.rr-info h3{font-size:18px;font-weight:900;margin:0 0 3px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rr-info h3 span{color:var(--muted);font-size:12.5px;font-weight:600;letter-spacing:.3px}
+.rr-info .rr-desc{color:var(--muted);font-size:13px;margin:0 0 10px}
+.rr-tags{display:flex;gap:6px;flex-wrap:wrap}
+.rr-tag{font-size:10.5px;font-weight:800;letter-spacing:.3px;padding:4px 12px;border-radius:var(--pill)}
+.rr-tag.blue{background:rgba(42,107,184,.16);color:#7fb3ee;border:1px solid rgba(42,107,184,.35)}
+.rr-tag.gold{background:rgba(195,154,74,.14);color:#e9c07a;border:1px solid rgba(195,154,74,.35)}
+.rr-tag.red{background:rgba(59,130,246,.16);color:#93c5fd;border:1px solid rgba(59,130,246,.35)}
+.rr-tag.fire{background:rgba(224,86,42,.16);color:#f4a08a;border:1px solid rgba(224,86,42,.35)}
+.rr-tag.green{background:rgba(62,196,106,.16);color:#8ce0a8;border:1px solid rgba(62,196,106,.35)}
+
+.rr-perks{border-right:1px solid var(--line);padding-right:22px}
+.rr-perks h4{font-size:11.5px;color:var(--gold);font-weight:900;letter-spacing:1px;margin:0 0 8px}
+.rank-row.mil .rr-perks h4{color:#7fb3ee}
+.rank-row.fire .rr-perks h4{color:var(--fire)}
+.rank-row.ems .rr-perks h4{color:var(--ems)}
+.rr-perks ul{list-style:none;padding:0;margin:0;font-size:12.5px;color:var(--muted);display:grid;gap:3px}
+.rr-perks li{position:relative;padding-right:14px;line-height:1.6}
+.rr-perks li::before{content:'';position:absolute;right:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.8}
+.rank-row.mil .rr-perks li::before{background:#7fb3ee}
+.rank-row.fire .rr-perks li::before{background:var(--fire)}
+.rank-row.ems .rr-perks li::before{background:var(--ems)}
+
+.rr-imgs{display:flex;gap:8px}
+.rr-img{
+  width:88px;height:88px;border-radius:var(--r-sm);
+  overflow:hidden;position:relative;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,#101a2e,#080d18);
+  flex-shrink:0;
+}
+.rr-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.92) brightness(.68) contrast(1.08);
+  transition:transform .6s cubic-bezier(.2,.7,.3,1), filter .5s;
+}
+.rank-row:hover .rr-img img{transform:scale(1.08);filter:grayscale(.7) brightness(.78)}
+.rr-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,7,14,.1),rgba(11,18,32,.55));pointer-events:none}
+.rr-img .rr-img-label{
+  position:absolute;bottom:6px;right:8px;left:8px;z-index:2;
+  font-size:9.5px;font-weight:800;color:#cfd8e8;
+  text-align:center;letter-spacing:.3px;
+  text-shadow:0 1px 4px rgba(0,0,0,.9);
+}
+
+@media(max-width:1080px){
+  .rank-row{
+    grid-template-columns:50px 76px 1fr auto;
+    grid-template-areas:"num ins info imgs" "num ins perks imgs";
+    row-gap:12px;
+  }
+  .rr-num{grid-area:num;align-self:start;margin-top:4px}
+  .rr-insignia{grid-area:ins;width:70px;height:70px;align-self:start}
+  .rr-insignia svg{width:44px;height:44px}
+  .rr-info{grid-area:info}
+  .rr-perks{grid-area:perks;border-right:none;padding-right:0;border-top:1px solid var(--line);padding-top:12px}
+  .rr-imgs{grid-area:imgs;align-self:start}
+}
+@media(max-width:720px){
+  .rank-row{
+    grid-template-columns:1fr;
+    grid-template-areas:"num" "ins" "info" "perks" "imgs";
+    justify-items:center;text-align:center;gap:14px;padding:24px 20px;
+  }
+  .rr-num{align-self:center;margin:0}
+  .rr-info h3{justify-content:center}
+  .rr-tags{justify-content:center}
+  .rr-perks{border-top:1px solid var(--line);padding-top:16px;width:100%}
+  .rr-perks ul{justify-items:center;text-align:center}
+  .rr-perks li{padding-right:0;padding-left:14px}
+  .rr-perks li::before{right:auto;left:0}
+  .rr-imgs{justify-content:center}
+}
+
+/* ===== Command Panel ===== */
+.cmd-card{border:1px solid var(--line);border-radius:var(--r-xl);background:var(--panel);backdrop-filter:blur(16px);box-shadow:var(--shadow);padding:44px 26px;position:relative;overflow:hidden}
+.cmd-card::after{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--steel) 0 33%,var(--gold) 33% 41%,var(--red) 41% 100%);opacity:.9}
+.cmd-gate{max-width:380px;margin:0 auto;text-align:center}
+.cmd-gate .lock{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.cmd-gate .lock svg{width:26px;height:26px}
+.cmd-field{width:100%;padding:14px 18px;border-radius:var(--pill);background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:15px;text-align:center;margin-bottom:12px}
+.cmd-field:focus{outline:none;border-color:var(--red)}
+.cmd-err{color:var(--red);font-size:13px;min-height:18px;margin-bottom:8px}
+.cmd-hint{color:var(--muted);font-size:12.5px;margin-top:14px}
+.cmd-top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-bottom:26px}
+.cmd-top h3{font-size:20px;font-weight:900}
+.cmd-top span{color:var(--muted);font-size:13px}
+.cmd-logout{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);padding:9px 18px;border-radius:var(--pill);font-size:13px;font-weight:700;cursor:pointer}
+.cmd-form{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+@media(min-width:760px){.cmd-form{grid-template-columns:repeat(5,1fr) auto}}
+.cmd-form input,.cmd-form select{padding:11px 14px;border-radius:var(--r-sm);background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:13.5px}
+.cmd-form button{background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;border:none;border-radius:var(--r-sm);font-weight:800;font-size:13.5px;padding:11px 16px;cursor:pointer}
+.cmd-tablewrap{overflow-x:auto}
+.cmd-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+.cmd-table th{color:var(--gold);font-weight:800;text-align:right;padding:10px 12px;border-bottom:1px solid var(--line-strong);white-space:nowrap}
+.cmd-table td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--text)}
+.cmd-table tr:hover td{background:rgba(255,255,255,.03)}
+.cmd-badge{padding:3px 12px;border-radius:var(--pill);font-size:12px;font-weight:700}
+.cmd-badge.police,.cmd-badge.LSPD{background:rgba(42,107,184,.15);color:#7fb0ee}
+.cmd-badge.SHERIFF{background:rgba(195,154,74,.15);color:#e9c07a}
+.cmd-badge.SAFD{background:rgba(224,86,42,.15);color:#f4a08a}
+.cmd-badge.EMS{background:rgba(62,196,106,.15);color:#8ce0a8}
+.cmd-actions{display:flex;gap:6px}
+.cmd-actions button{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px}
+.cmd-actions button.del:hover{background:rgba(59,130,246,.25);border-color:var(--red)}
+.cmd-actions button.edit:hover{background:rgba(42,107,184,.25);border-color:var(--steel)}
+.cmd-empty{text-align:center;color:var(--muted);padding:30px 0;font-size:14px}
+
+/* ===== Footer ===== */
+.site-footer{padding:20px 20px 40px}
+.foot-card{
+  max-width:1240px;margin:0 auto;
+  border-radius:var(--r-xl);border:1px solid var(--line);
+  background:rgba(9,15,26,.75);backdrop-filter:blur(14px);
+  padding:48px 30px 26px;
+}
+.foot-top{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+@media(min-width:820px){.foot-top{grid-template-columns:1.6fr 1fr 1fr}}
+.foot-brand .logo{margin-bottom:14px}
+.foot-brand p{color:var(--muted);font-size:13.8px;margin:0;max-width:340px}
+.foot-col h5{font-size:14px;font-weight:800;margin:0 0 16px;color:var(--text)}
+.foot-col a{display:block;color:var(--muted);font-size:13.5px;padding:6px 0;transition:.22s}
+.foot-col a:hover{color:var(--text);padding-right:6px}
+.foot-bottom{padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12.5px}
+
+/* ===== Laws ===== */
+.laws-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.lawstab{
+  padding:11px 22px;border-radius:var(--pill);
+  background:rgba(13,22,38,.7);border:1px solid var(--line);
+  color:var(--muted);font-size:13.5px;font-weight:800;cursor:pointer;
+  transition:.3s cubic-bezier(.2,.7,.3,1);backdrop-filter:blur(10px);
+}
+.lawstab:hover{color:var(--text);transform:translateY(-3px);border-color:var(--line-strong)}
+.lawstab.active{background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;border-color:transparent;box-shadow:0 18px 45px -22px rgba(59,130,246,.9)}
+.laws-panel{display:none}
+.laws-panel.active{display:block;animation:fadeUp .5s cubic-bezier(.2,.7,.3,1)}
+.laws-card{border:1px solid var(--line);border-radius:var(--r-xl);background:var(--panel);backdrop-filter:blur(16px);box-shadow:var(--shadow);padding:38px 28px;position:relative;overflow:hidden}
+.laws-card::after{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--steel) 0 33%,var(--gold) 33% 41%,var(--red) 41% 100%);opacity:.9}
+.laws-card h3{font-size:22px;font-weight:900;margin:0 0 8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.laws-card h3 .num{width:36px;height:36px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;font-size:15px;font-weight:900}
+.laws-card > p.lead{color:var(--muted);font-size:14px;margin:0 0 22px}
+.laws-list{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.law-item{padding:18px 20px;border-radius:var(--r);background:rgba(13,22,38,.55);border:1px solid var(--line);transition:.3s}
+.law-item:hover{border-color:var(--line-strong);background:rgba(20,34,58,.75);transform:translateX(-3px)}
+.law-item h4{font-size:15px;font-weight:900;margin:0 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.law-item h4 .badge{font-size:10.5px;font-weight:800;padding:3px 11px;border-radius:var(--pill);background:rgba(195,154,74,.14);color:#e9c07a;border:1px solid rgba(195,154,74,.35)}
+.law-item h4 .badge.red{background:rgba(59,130,246,.16);color:#93c5fd;border-color:rgba(59,130,246,.35)}
+.law-item h4 .badge.green{background:rgba(62,196,106,.16);color:#8ce0a8;border-color:rgba(62,196,106,.35)}
+.law-item p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.75}
+.laws-placeholder{text-align:center;padding:56px 24px;border:2px dashed var(--line-strong);border-radius:var(--r-lg);background:rgba(255,255,255,.02)}
+.laws-placeholder .ico{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center}
+.laws-placeholder .ico svg{width:28px;height:28px}
+.laws-placeholder h3{font-size:15px;font-weight:700;margin:0;justify-content:center;text-align:right;line-height:2.2;color:var(--text);white-space:pre-line}
+.laws-placeholder p{color:var(--muted);font-size:13.5px;margin:0 auto;max-width:440px}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG SYMBOLS ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2.2l8 3v6c0 5-3.5 8.6-8 11-4.5-2.4-8-6-8-11v-6z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8.6 12l2.4 2.4L15.6 9.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6 6.6.7-4.9 4.5 1.4 6.5L12 17.1l-6 3.2 1.4-6.5-4.9-4.5 6.6-.7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 14l-2 8 6-3 6 3-2-8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24"><path d="M12 2s4 5 4 9a4 4 0 11-8 0c0-1.5.5-2.5 1-3.5C10 6 12 4 12 2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 22c4 0 7-3 7-6.5 0-2-1-3.5-2-4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="ic-cross" viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v16H6.5A2.5 2.5 0 004 21.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="ic-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 7.5A6 6 0 006 12c0 1.7.7 3.3 1.9 4.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 7.5A6 6 0 0118 12c0 1.7-.7 3.3-1.9 4.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4.5 4.5a10 10 0 000 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M19.5 4.5a10 10 0 010 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+
+  <symbol id="ins-chev1" viewBox="0 0 48 48"><path d="M10 32 L24 16 L38 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-chev2" viewBox="0 0 48 48"><path d="M10 26 L24 12 L38 26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 38 L24 24 L38 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-chev3" viewBox="0 0 48 48"><path d="M10 22 L24 8 L38 22" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 32 L24 18 L38 32" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 42 L24 28 L38 42" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-bar1" viewBox="0 0 48 48"><rect x="14" y="20" width="20" height="8" rx="3" fill="currentColor"/></symbol>
+  <symbol id="ins-bar2" viewBox="0 0 48 48"><rect x="14" y="12" width="20" height="7" rx="3" fill="currentColor"/><rect x="14" y="29" width="20" height="7" rx="3" fill="currentColor"/></symbol>
+  <symbol id="ins-major" viewBox="0 0 48 48"><path d="M24 6 L28 18 L41 18 L30 26 L34 39 L24 31 L14 39 L18 26 L7 18 L20 18 Z" fill="currentColor"/></symbol>
+  <symbol id="star5" viewBox="0 0 20 20"><path d="M10 1.5 L12.5 7.5 L19 8.2 L14 12.6 L15.5 19 L10 15.6 L4.5 19 L6 12.6 L1 8.2 L7.5 7.5 Z" fill="currentColor"/></symbol>
+  <symbol id="ins-chief" viewBox="0 0 48 48"><use href="#star5" x="3" y="3" width="19" height="19"/><use href="#star5" x="26" y="3" width="19" height="19"/><use href="#star5" x="3" y="26" width="19" height="19"/><use href="#star5" x="26" y="26" width="19" height="19"/></symbol>
+
+  <symbol id="ins-mchev1" viewBox="0 0 48 48"><path d="M10 32 L24 16 L38 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-mchev2" viewBox="0 0 48 48"><path d="M10 26 L24 12 L38 26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 38 L24 24 L38 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-mchev3" viewBox="0 0 48 48"><path d="M10 22 L24 8 L38 22" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 32 L24 18 L38 32" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 42 L24 28 L38 42" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ins-mstar1" viewBox="0 0 48 48"><use href="#star5" x="14" y="14" width="20" height="20"/></symbol>
+  <symbol id="ins-mstar2" viewBox="0 0 48 48"><use href="#star5" x="4" y="14" width="18" height="18"/><use href="#star5" x="26" y="14" width="18" height="18"/></symbol>
+  <symbol id="ins-mstar3" viewBox="0 0 48 48"><use href="#star5" x="2" y="14" width="15" height="15"/><use href="#star5" x="16.5" y="14" width="15" height="15"/><use href="#star5" x="31" y="14" width="15" height="15"/></symbol>
+  <symbol id="ins-mstar4" viewBox="0 0 48 48"><use href="#star5" x="3" y="3" width="19" height="19"/><use href="#star5" x="26" y="3" width="19" height="19"/><use href="#star5" x="3" y="26" width="19" height="19"/><use href="#star5" x="26" y="26" width="19" height="19"/></symbol>
+</defs>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="navbar">
+    <a href="#" class="logo"><span class="mark">R</span>ROLL<span>.</span></a>
+    <nav class="navlinks">
+      <a href="#operations">مركز العمليات</a>
+      <a href="#ranks">الرتب</a>
+      <a href="#laws">القوانين</a>
+      <a href="#command">لوحة القيادة</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://discord.gg/knZQxZGRHp" class="btn btn-primary">انضم للسيرفر</a>
+      <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#operations">مركز العمليات</a>
+    <a href="#ranks">الرتب</a>
+    <a href="#laws">القوانين</a>
+    <a href="#command">لوحة القيادة</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <h1><span class="r"></span> سلم الرتب الرسمي</h1>
+      <p>هيكل رتب موثّق لكل قطاع، مع المميزات والوحدات والصور الرسمية المعتمدة من الهيئة.</p>
+      <div class="hero-cta">
+        <a href="#ranks" class="btn btn-primary">تصفح الرتب</a>
+        <a href="#laws" class="btn btn-ghost">القوانين</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="7">0</b><span>رتب الشرطة</span></div>
+        <div class="stat"><b data-count="7">0</b><span>رتب الإطفاء</span></div>
+        <div class="stat"><b data-count="5">0</b><span>رتب الإسعاف</span></div>
+        <div class="stat"><b>24/7</b><span>سيرفر يعمل بلا توقف</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OPERATIONS CENTER ===== -->
+<section class="ops-section wrap" id="operations">
+  <div class="ops-card reveal">
+
+    <div class="ops-chip-wrap">
+      <div class="ops-chip uptime">
+        <div class="num">تابع الشرح<small></small></div>
+        <div class="lbl"></div>
+      </div>
+      <div class="ops-chip support">
+        <div class="num">24/7</div>
+        <div class="lbl">SUPPORT</div>
+      </div>
+    </div>
+
+    <div class="ops-head">
+      <div class="r-icon"><svg><use href="#ic-radio"/></svg></div>
+      <h2>مركز العمليات</h2>
+    </div>
+
+<!-- 📻 فيديو شرح الراديو -->
+<div class="ops-video">
+<iframe
+  src="https://www.youtube.com/embed/GYblwmMwfvg"
+  title="شرح الراديو"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  referrerpolicy="strict-origin-when-cross-origin"
+  loading="lazy">
+</iframe>
+  <span class="video-note">📻 شرح استخدام الراديو</span>
+</div>
+
+    <!-- 📋 قائمة الوحدات -->
+    <div class="ops-list">
+
+      <div class="ops-unit">
+        <span class="ops-badge available">موجه  1 </span>
+        <div class="ops-info">
+          <h3>RES</h3>
+          <p>مشتركه</p>
+        </div>
+        <div class="ops-unit-icon police">
+          <svg><use href="#ic-shield"/></svg>
+        </div>
+      </div>
+
+            <div class="ops-unit">
+        <span class="ops-badge available">موجه 2 </span>
+        <div class="ops-info">
+          <h3>LSPD</h3>
+        </div>
+        <div class="ops-unit-icon police">
+          <svg><use href="#ic-shield"/></svg>
+        </div>
+      </div>
+            <div class="ops-unit">
+        <span class="ops-badge available">موجه ٣ </span>
+        <div class="ops-info">
+          <h3>SHERIFF</h3>
+        </div>
+        <div class="ops-unit-icon police">
+          <svg><use href="#ic-shield"/></svg>
+        </div>
+      </div>
+            <div class="ops-unit">
+        <span class="ops-badge available">موجه 4 </span>
+        <div class="ops-info">
+          <h3>SAFD</h3>
+
+        </div>
+        <div class="ops-unit-icon police">
+          <svg><use href="#ic-shield"/></svg>
+        </div>
+      </div>
+            <div class="ops-unit">
+        <span class="ops-badge available">موجه 5 </span>
+        <div class="ops-info">
+          <h3>EMS</h3>
+        </div>
+        <div class="ops-unit-icon police">
+          <svg><use href="#ic-shield"/></svg>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== RANKS ===== -->
+<section id="ranks" style="padding-top:40px">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">السلم الوظيفي</div>
+      <h2>الرتب حسب القطاع</h2>
+      <p>اختر القطاع لعرض الرتب كاملة من الأدنى إلى الأعلى مع المميزات والوحدات.</p>
+    </div>
+
+    <div class="sector-tabs reveal">
+      <button class="stab active" data-sector="police" data-theme="gold"><svg><use href="#ic-shield"/></svg> LSPD POL</button>
+      <button class="stab" data-sector="sheriff" data-theme="gold"><svg><use href="#ic-star"/></svg> SHERIFF</button>
+      <button class="stab" data-sector="military" data-theme="gold"><svg><use href="#ic-medal"/></svg> SWAT</button>
+      <button class="stab" data-sector="safd" data-theme="fire"><svg><use href="#ic-fire"/></svg> SAFD</button>
+      <button class="stab" data-sector="ems" data-theme="ems"><svg><use href="#ic-cross"/></svg> EMS</button>
+    </div>
+
+    <!-- POLICE -->
+    <div class="sector-panel active" id="sector-police">
+      <div class="sector-header gold-theme reveal">
+        <div class="sh-icon"><svg><use href="#ic-shield"/></svg></div>
+        <div class="sh-info">
+          <h3>قطاع الشرطة — LSPD</h3>
+          <p>حفظ الأمن وتطبيق القانون داخل المدينة عبر دوريات ثابتة ووحدات متخصصة.</p>
+        </div>
+        <div class="sh-stats">
+          <div class="sh-stat"><b>7</b> رتب</div>
+          <div class="sh-stat"><b>5</b> وحدات</div>
+          <div class="sh-stat"><b>عملياتي</b></div>
+        </div>
+      </div>
+
+      <div class="rank-list">
+        <div class="rank-row reveal">
+          <div class="rr-num">1</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev1"/></svg></div>
+          <div class="rr-info">
+            <h3>مستجد <span>Rookie</span></h3>
+            <p class="rr-desc">أعضاء الشرطة الجدد وما زالوا تحت التدريب والتأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag blue">تجنيد</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس الأساسي: كم طويل + كرفته مع جميع المستلزمات للعسكري.</li>
+              <li>المركبات: اكسبلور 2014 + تورس + تشارجر قديم.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-1/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-1/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">2</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev2"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي معتمد <span>Officers</span></h3>
+            <p class="rr-desc">بعد إتمام التدريب الأساسي، يبدأ العمل الميداني الكامل.</p>
+            <div class="rr-tags"><span class="rr-tag blue">عملياتي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس: كم طويل + جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع ما سبق + اكسبلور 2016 + تشارجر جديد + F250.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-2/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-2/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">3</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev3"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي محترف <span>Officers -2</span></h3>
+            <p class="rr-desc">عنصر ميداني محترف، يستخدم زي الصيف ويقود الدوريات.</p>
+            <div class="rr-tags"><span class="rr-tag blue">ميداني</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس: كم قصير + جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع المركبات السابقة.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-3/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-3/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">4</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar1"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي ذو خبرة <span>Officers -3</span></h3>
+            <p class="rr-desc">يمكنه طلب تدريب المجندين الجدد وتوسيع أسطول مركباته.</p>
+            <div class="rr-tags"><span class="rr-tag blue">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تدريب Rookie.</li>
+              <li>اللباس: كم قصير + رتبه &gt;&gt; | جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع ما سبق + كابرس + اكسبلور 20 + تاهو 14.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-4/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-4/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">5</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar2"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي خبرة عالية <span>Officers -3 + 1</span></h3>
+            <p class="rr-desc">رتبة ميدانية متقدمة مع سنة خبرة معتمدة.</p>
+            <div class="rr-tags"><span class="rr-tag blue">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تدريب Rookie.</li>
+              <li>اللباس: كم طويل + قصير | الرتبه #&gt;&gt; + سنه خبره | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق + تاهو 18 + درانجو + سلفرادو.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-5/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-5/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">6</div>
+          <div class="rr-insignia"><svg><use href="#ins-major"/></svg></div>
+          <div class="rr-info">
+            <h3>رقيب <span>Sergeant</span></h3>
+            <p class="rr-desc">مشرف ميداني يقود الدوريات ويدرب المستجدين.</p>
+            <div class="rr-tags"><span class="rr-tag blue">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تقديم لتكون مشرف ميداني + تدريب المستجدين.</li>
+              <li>اللباس: كم طويل + قصير " الرتبه &gt;&gt;&gt; + 3 سنوات خبر | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق + تاهو 24 + موستنق.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-6/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-6/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">7</div>
+          <div class="rr-insignia"><svg><use href="#ins-chief"/></svg></div>
+          <div class="rr-info">
+            <h3>رقيب ثاني <span>Sergeant 2</span></h3>
+            <p class="rr-desc">مشرف عام على المشرفين مع صلاحيات تدريب موسعة.</p>
+            <div class="rr-tags"><span class="rr-tag red">أعلى رتبة</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تقديم لتكون مشرف عام + تدريب المستجدين.</li>
+              <li>اللباس: كم طويل + قصير " الرتبه -&gt;&gt;&gt; + 4 سنوات خبر | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق | تاهو 26 + يوكن 26.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-officer-7/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/police-car-7/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHERIFF -->
+    <div class="sector-panel" id="sector-sheriff">
+      <div class="sector-header gold-theme reveal">
+        <div class="sh-icon"><svg><use href="#ic-star"/></svg></div>
+        <div class="sh-info">
+          <h3>قطاع الشريف — SHERIFF</h3>
+          <p>نفس سلم رتب الشرطة الأساسي، بصلاحيات ميدانية مطابقة لـ LSPD.</p>
+        </div>
+        <div class="sh-stats">
+          <div class="sh-stat"><b>7</b> رتب</div>
+          <div class="sh-stat"><b>5</b> وحدات</div>
+          <div class="sh-stat"><b>عملياتي</b></div>
+        </div>
+      </div>
+
+      <div class="rank-list">
+        <div class="rank-row reveal">
+          <div class="rr-num">1</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev1"/></svg></div>
+          <div class="rr-info">
+            <h3>مستجد <span>Rookie</span></h3>
+            <p class="rr-desc">أعضاء الشريف الجدد تحت التدريب والتأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag blue">تجنيد</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس الأساسي: كم طويل + كرفته مع جميع المستلزمات للعسكري.</li>
+              <li>المركبات: اكسبلور 2014 + تورس + تشارجر قديم.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-1/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-1/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">2</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev2"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي معتمد <span>Officers</span></h3>
+            <p class="rr-desc">عنصر ميداني كامل بعد إتمام التأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag blue">عملياتي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس: كم طويل + جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع ما سبق + اكسبلور 2016 + تشارجر جديد + F250.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-2/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-2/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">3</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev3"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي محترف <span>Officers -2</span></h3>
+            <p class="rr-desc">زي الصيف + كامل المركبات السابقة.</p>
+            <div class="rr-tags"><span class="rr-tag blue">ميداني</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس: كم قصير + جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع المركبات السابقة.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-3/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-3/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">4</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar1"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي ذو خبرة <span>Officers -3</span></h3>
+            <p class="rr-desc">يمكنه تدريب المجندين ويمتلك أسطولاً موسعاً.</p>
+            <div class="rr-tags"><span class="rr-tag blue">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تدريب Rookie.</li>
+              <li>اللباس: كم قصير + رتبه &gt;&gt; | جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع ما سبق + كابرس + اكسبلور 20 + تاهو 14.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-4/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-4/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">5</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar2"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي خبرة عالية <span>Officers -3 + 1</span></h3>
+            <p class="rr-desc">خبرة سنة معتمدة مع صلاحيات التدريب.</p>
+            <div class="rr-tags"><span class="rr-tag blue">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تدريب Rookie.</li>
+              <li>اللباس: كم طويل + قصير | الرتبه #&gt;&gt; + سنه خبره | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق + تاهو 18 + درانجو + سلفرادو.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-5/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-5/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">6</div>
+          <div class="rr-insignia"><svg><use href="#ins-major"/></svg></div>
+          <div class="rr-info">
+            <h3>رقيب <span>Sergeant</span></h3>
+            <p class="rr-desc">مشرف ميداني + تدريب المستجدين.</p>
+            <div class="rr-tags"><span class="rr-tag blue">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تقديم لتكون مشرف ميداني + تدريب المستجدين.</li>
+              <li>اللباس: كم طويل + قصير " الرتبه &gt;&gt;&gt; + 3 سنوات خبر | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق + تاهو 24 + موستنق.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-6/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-6/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row reveal">
+          <div class="rr-num">7</div>
+          <div class="rr-insignia"><svg><use href="#ins-chief"/></svg></div>
+          <div class="rr-info">
+            <h3>رقيب ثاني <span>Sergeant 2</span></h3>
+            <p class="rr-desc">مشرف عام + تدريب المستجدين.</p>
+            <div class="rr-tags"><span class="rr-tag red">أعلى رتبة</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الصلاحيات: يمكنك طلب تقديم لتكون مشرف عام + تدريب المستجدين.</li>
+              <li>اللباس: كم طويل + قصير " الرتبه -&gt;&gt;&gt; + 4 سنوات خبر | جميع المستلزمات.</li>
+              <li>المركبات: جميع ما سبق | تاهو 26 + يوكن 26.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-7/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/sheriff-car-7/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MILITARY / SWAT -->
+    <div class="sector-panel" id="sector-military">
+      <div class="sector-header gold-theme reveal">
+        <div class="sh-icon"><svg><use href="#ic-medal"/></svg></div>
+        <div class="sh-info">
+          <h3>القطاع العسكري — SWAT / Military Forces</h3>
+          <p>وحدة تدخل مسلح للتعامل مع الحالات الأمنية عالية الخطورة وحماية المنشآت الحيوية.</p>
+        </div>
+        <div class="sh-stats">
+          <div class="sh-stat"><b>7</b> رتب</div>
+          <div class="sh-stat"><b>4</b> وحدات</div>
+          <div class="sh-stat"><b>عسكري</b></div>
+        </div>
+      </div>
+
+      <div class="rank-list">
+        <div class="rank-row mil reveal">
+          <div class="rr-num">1</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev1"/></svg></div>
+          <div class="rr-info">
+            <h3>مستجد <span>Rookie</span></h3>
+            <p class="rr-desc">العنصر الأساسي في القطاع العسكري، تحت التدريب والتأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag blue">تجنيد</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس الأساسي: كم طويل + كرفته مع جميع المستلزمات للعسكري.</li>
+              <li>المركبات: اكسبلور 2014 + تورس + تشارجر قديم.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-1/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-1/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">2</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev2"/></svg></div>
+          <div class="rr-info">
+            <h3>شرطي معتمد <span>Officers</span></h3>
+            <p class="rr-desc">عنصر ميداني بعد إتمام التأهيل، يشارك في الدوريات العسكرية.</p>
+            <div class="rr-tags"><span class="rr-tag blue">عملياتي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس: كم طويل + جميع المستلزمات للعسكري.</li>
+              <li>المركبات: جميع ما سبق + اكسبلور 2016 + تشارجر جديد + F250.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-2/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-2/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">3</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev3"/></svg></div>
+          <div class="rr-info">
+            <h3>رقيب <span>Sergeant</span></h3>
+            <p class="rr-desc">قائد فريق ميداني، يشرف على الجنود ويقود العمليات الصغيرة.</p>
+            <div class="rr-tags"><span class="rr-tag blue">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة فريق ميداني</li>
+              <li>الإشراف على الجنود</li>
+              <li>تنفيذ العمليات الصغيرة</li>
+              <li>استخدام المعدات المتخصصة</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-3/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-3/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">4</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar1"/></svg></div>
+          <div class="rr-info">
+            <h3>ملازم <span>Lieutenant</span></h3>
+            <p class="rr-desc">قيادة وحدة عسكرية كاملة والتخطيط للعمليات.</p>
+            <div class="rr-tags"><span class="rr-tag blue">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة وحدة عسكرية</li>
+              <li>التخطيط للعمليات</li>
+              <li>الإشراف على الرقباء</li>
+              <li>إدارة التدريبات</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-4/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-4/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">5</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar2"/></svg></div>
+          <div class="rr-info">
+            <h3>نقيب <span>Captain</span></h3>
+            <p class="rr-desc">إدارة العمليات العسكرية والإشراف على عدة وحدات.</p>
+            <div class="rr-tags"><span class="rr-tag blue">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>إدارة العمليات العسكرية</li>
+              <li>الإشراف على الوحدات</li>
+              <li>التخطيط التكتيكي</li>
+              <li>التنسيق مع القطاعات</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-5/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-5/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">6</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar3"/></svg></div>
+          <div class="rr-info">
+            <h3>عقيد <span>Colonel</span></h3>
+            <p class="rr-desc">قيادة عليا في القطاع العسكري والإشراف على الأقسام.</p>
+            <div class="rr-tags"><span class="rr-tag blue">قيادة عليا</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة أقسام عسكرية</li>
+              <li>الإشراف على القيادات</li>
+              <li>التخطيط الاستراتيجي</li>
+              <li>إدارة العمليات الكبرى</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-6/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-6/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row mil reveal">
+          <div class="rr-num">7</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar4"/></svg></div>
+          <div class="rr-info">
+            <h3>قائد القطاع العسكري <span>General</span></h3>
+            <p class="rr-desc">أعلى رتبة عسكرية، القيادة العامة للقطاع العسكري.</p>
+            <div class="rr-tags"><span class="rr-tag red">أعلى رتبة</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة القطاع العسكري بالكامل</li>
+              <li>الإشراف على جميع الوحدات</li>
+              <li>التخطيط الاستراتيجي العام</li>
+              <li>تمثيل القطاع في القيادة العليا</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-soldier-7/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي العسكري</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/mil-vehicle-7/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFD -->
+    <div class="sector-panel" id="sector-safd">
+      <div class="sector-header fire-theme reveal">
+        <div class="sh-icon"><svg><use href="#ic-fire"/></svg></div>
+        <div class="sh-info">
+          <h3>قطاع الإطفاء — SAFD</h3>
+          <p>رتب الإطفاء والإنقاذ والسلامة، من الإطفائي حتى رئيس الإطفاء.</p>
+        </div>
+        <div class="sh-stats">
+          <div class="sh-stat"><b>7</b> رتب</div>
+          <div class="sh-stat"><b>4</b> وحدات</div>
+          <div class="sh-stat"><b>إطفاء</b></div>
+        </div>
+      </div>
+
+      <div class="rank-list">
+        <div class="rank-row fire reveal">
+          <div class="rr-num">1</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev1"/></svg></div>
+          <div class="rr-info">
+            <h3>إطفائي <span>Firefighter</span></h3>
+            <p class="rr-desc">العنصر الأساسي في قطاع الإطفاء، تحت التدريب والتأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag fire">تجنيد</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس الأساسي: زي الإطفاء + الخوذة + جميع المستلزمات.</li>
+              <li>المركبات: شاحنة الإطفاء الأساسية + سيارة الإسعاف.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-1/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-1/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">2</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev2"/></svg></div>
+          <div class="rr-info">
+            <h3>مهندس <span>Engineer</span></h3>
+            <p class="rr-desc">مسؤول عن تشغيل المعدات الثقيلة وأنظمة الإطفاء.</p>
+            <div class="rr-tags"><span class="rr-tag fire">فني</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>تشغيل المعدات الثقيلة</li>
+              <li>صيانة أنظمة الإطفاء</li>
+              <li>قيادة شاحنات الإطفاء</li>
+              <li>المشاركة في عمليات الإنقاذ</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-2/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-2/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">3</div>
+          <div class="rr-insignia"><svg><use href="#ins-mchev3"/></svg></div>
+          <div class="rr-info">
+            <h3>ملازم الإطفاء <span>Fire Lieutenant</span></h3>
+            <p class="rr-desc">قائد فريق ميداني في عمليات الإطفاء والإنقاذ.</p>
+            <div class="rr-tags"><span class="rr-tag fire">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة فريق ميداني</li>
+              <li>الإشراف على الإطفائيين</li>
+              <li>تنفيذ عمليات الإنقاذ</li>
+              <li>إدارة التدريبات</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-3/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-3/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">4</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar1"/></svg></div>
+          <div class="rr-info">
+            <h3>نقيب الإطفاء <span>Fire Captain</span></h3>
+            <p class="rr-desc">قيادة وحدة إطفاء كاملة والتخطيط للعمليات الكبرى.</p>
+            <div class="rr-tags"><span class="rr-tag fire">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة وحدة إطفاء</li>
+              <li>التخطيط للعمليات</li>
+              <li>الإشراف على الملازمين</li>
+              <li>التنسيق مع القطاعات الأخرى</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-4/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-4/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">5</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar2"/></svg></div>
+          <div class="rr-info">
+            <h3>رئيس الكتيبة <span>Battalion Chief</span></h3>
+            <p class="rr-desc">إدارة عدة وحدات إطفاء والإشراف على العمليات.</p>
+            <div class="rr-tags"><span class="rr-tag fire">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>إدارة عدة وحدات</li>
+              <li>الإشراف على النقباء</li>
+              <li>التخطيط التكتيكي</li>
+              <li>قيادة المهام الكبرى</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-5/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-5/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">6</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar3"/></svg></div>
+          <div class="rr-info">
+            <h3>نائب الرئيس <span>Deputy Chief</span></h3>
+            <p class="rr-desc">قيادة عليا في قطاع الإطفاء والإشراف على الأقسام.</p>
+            <div class="rr-tags"><span class="rr-tag fire">قيادة عليا</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة أقسام الإطفاء</li>
+              <li>الإشراف على القيادات</li>
+              <li>التخطيط الاستراتيجي</li>
+              <li>تمثيل القطاع</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-6/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-6/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row fire reveal">
+          <div class="rr-num">7</div>
+          <div class="rr-insignia"><svg><use href="#ins-mstar4"/></svg></div>
+          <div class="rr-info">
+            <h3>رئيس الإطفاء <span>Fire Chief</span></h3>
+            <p class="rr-desc">أعلى رتبة في قطاع الإطفاء، القيادة العامة للقطاع.</p>
+            <div class="rr-tags"><span class="rr-tag red">أعلى رتبة</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة قطاع الإطفاء بالكامل</li>
+              <li>الإشراف على جميع الوحدات</li>
+              <li>التخطيط الاستراتيجي العام</li>
+              <li>تمثيل القطاع في القيادة العليا</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/firefighter-7/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/fire-truck-7/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMS -->
+    <div class="sector-panel" id="sector-ems">
+      <div class="sector-header ems-theme reveal">
+        <div class="sh-icon"><svg><use href="#ic-cross"/></svg></div>
+        <div class="sh-info">
+          <h3>قطاع الإسعاف — EMS</h3>
+          <p>الاستجابة الطبية الطارئة والإسعاف الميداني داخل المدينة.</p>
+        </div>
+        <div class="sh-stats">
+          <div class="sh-stat"><b>5</b> رتب</div>
+          <div class="sh-stat"><b>3</b> وحدات</div>
+          <div class="sh-stat"><b>طبي</b></div>
+        </div>
+      </div>
+
+      <div class="rank-list">
+        <div class="rank-row ems reveal">
+          <div class="rr-num">1</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev1"/></svg></div>
+          <div class="rr-info">
+            <h3>فني طب طوارئ <span>EMT</span></h3>
+            <p class="rr-desc">العنصر الأساسي في الإسعاف، تحت التدريب والتأهيل.</p>
+            <div class="rr-tags"><span class="rr-tag green">تجنيد</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>اللباس الأساسي: زي الإسعاف + جميع المستلزمات.</li>
+              <li>المركبات: سيارة الإسعاف الأساسية.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/emt-1/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/ambulance-1/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row ems reveal">
+          <div class="rr-num">2</div>
+          <div class="rr-insignia"><svg><use href="#ins-chev2"/></svg></div>
+          <div class="rr-info">
+            <h3>مسعف <span>Paramedic</span></h3>
+            <p class="rr-desc">مسعف ميداني بعد إتمام التأهيل الأساسي.</p>
+            <div class="rr-tags"><span class="rr-tag green">عملياتي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>الاستجابة الطبية المتقدمة</li>
+              <li>المركبات: جميع ما سبق + سيارة إسعاف متقدمة.</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/emt-2/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/ambulance-2/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row ems reveal">
+          <div class="rr-num">3</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar1"/></svg></div>
+          <div class="rr-info">
+            <h3>مشرف مسعفين <span>Paramedic Supervisor</span></h3>
+            <p class="rr-desc">الإشراف على فرق الإسعاف الميدانية.</p>
+            <div class="rr-tags"><span class="rr-tag green">إشرافي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة فرق الإسعاف</li>
+              <li>الإشراف على المسعفين</li>
+              <li>إدارة التدريبات الطبية</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/emt-3/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/ambulance-3/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row ems reveal">
+          <div class="rr-num">4</div>
+          <div class="rr-insignia"><svg><use href="#ins-bar2"/></svg></div>
+          <div class="rr-info">
+            <h3>ملازم الإسعاف <span>EMS Lieutenant</span></h3>
+            <p class="rr-desc">قيادة وحدة إسعاف كاملة والتخطيط للعمليات.</p>
+            <div class="rr-tags"><span class="rr-tag green">قيادي</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة وحدة إسعاف</li>
+              <li>التخطيط للعمليات</li>
+              <li>الإشراف على المشرفين</li>
+              <li>التنسيق مع القطاعات</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/emt-4/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/ambulance-4/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+
+        <div class="rank-row ems reveal">
+          <div class="rr-num">5</div>
+          <div class="rr-insignia"><svg><use href="#ins-chief"/></svg></div>
+          <div class="rr-info">
+            <h3>نقيب الإسعاف <span>EMS Captain</span></h3>
+            <p class="rr-desc">أعلى رتبة في قطاع الإسعاف، القيادة العامة للقطاع.</p>
+            <div class="rr-tags"><span class="rr-tag red">أعلى رتبة</span><span class="rr-tag gold">متجر</span></div>
+          </div>
+          <div class="rr-perks">
+            <h4>المميزات</h4>
+            <ul>
+              <li>قيادة قطاع الإسعاف بالكامل</li>
+              <li>الإشراف على جميع الوحدات</li>
+              <li>التخطيط الاستراتيجي العام</li>
+              <li>تمثيل القطاع في القيادة العليا</li>
+            </ul>
+          </div>
+          <div class="rr-imgs">
+            <div class="rr-img"><img src="https://picsum.photos/seed/emt-5/240/240?grayscale" alt="الزي" loading="lazy"><span class="rr-img-label">الزي الرسمي</span></div>
+            <div class="rr-img"><img src="https://picsum.photos/seed/ambulance-5/240/240?grayscale" alt="المركبة" loading="lazy"><span class="rr-img-label">المركبة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== LAWS ===== -->
+<section id="laws" class="wrap" style="padding:70px 0">
+  <div class="shead reveal">
+    <span class="tag">القوانين الرسمية</span>
+    <h2>قوانين السيرفر</h2>
+    <p>جميع القوانين المعتمدة من الهيئة الرسمية — اختر القسم لعرض القوانين الخاصة به.</p>
+  </div>
+
+  <div class="laws-tabs reveal">
+    <button class="lawstab active" data-law="general">القوانين السيرفر </button>
+    <button class="lawstab" data-law="police">قوانين المواطنين</button>
+    <button class="lawstab" data-law="criminal">معلومات أساسية</button>
+    <button class="lawstab" data-law="traffic">المناطق الآمنة</button>
+    <button class="lawstab" data-law="gangs">القيادة والتعامل</button>
+  </div>
+
+  <div class="laws-panel active" id="law-general">
+    <div class="laws-card">
+      <h3><span class="num">1</span> القوانين السيرفر</h3>
+      <p class="lead">القوانين الأساسية التي تنطبق على جميع اللاعبين داخل السيرفر.</p>
+      <div class="laws-placeholder">
+        <div class="ico"><svg><use href="#ic-book"/></svg></div>
+        <h3>يمنع RDM و VDM نهائياً
+
+يمنع العنصرية أو التنمر أو الإهانة
+
+لازم تبقى داخل الرول بلاي دائمًا (ما تطلع من الشخصية)
+
+الشرطة يستخدمون الأسلحة الرسمية فقط
+
+استخدام هاكات أو برامج غش = باند دائم
+
+كل شيء لازم يصير برول بلاي واقعي (إصابة، حادث، موت…)
+
+لازم المركبة العسكريه يكون فيها كول ساين
+
+يمنع ركوب سيارات الإدارة بدون إذن
+
+يمنع الأسماء المسيئة أو العنصرية
+
+الالتزام بخريطة الاختصاص دائمًا
+
+يمنع الهروب أو العنف وقت الـ cooldown أو priority.
+
+لازم تكون داخل نظام MDT وقت اللعب.
+
+يمنع دخول ممتلكات غيرك بدون إذن أو سبب قانوني
+
+الإدارة تقدر تعدل القوانين وتعاقب المخالفين بأي وقت</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="laws-panel" id="law-police">
+    <div class="laws-card">
+      <h3><span class="num">2</span> قوانين المواطنين</h3>
+      <p class="lead">القوانين المرتبطة بالقطاع الأمني وطريقة التعامل مع المدنيين والمشتبه بهم.</p>
+      <div class="laws-placeholder">
+        <div class="ico"><svg><use href="#ic-book"/></svg></div>
+        <h3>متى مسموح تهرب من الشرطة
+
+عليك مذكرة توقيف
+
+اذا كنت مطلوب
+
+معك سلاح غير مسجل وانكشف
+
+ارتكبت جريمة كبيرة قدام الشرطة
+
+متى ممنوع تهرب
+
+بس لأنك تبغى</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="laws-panel" id="law-criminal">
+    <div class="laws-card">
+      <h3><span class="num">3</span>معلومات أساسية للمواطنين</h3>
+      <p class="lead">الجرائم والعقوبات المترتبة عليها حسب درجة خطورتها.</p>
+      <div class="laws-placeholder">
+        <div class="ico"><svg><use href="#ic-book"/></svg></div>
+        <h3>لازم تبقى داخل الشخصية دائمًا
+
+قدّر حياتك وحياة غيرك
+
+إذا مت ورجعت من المستشفى تنسى اللي صار
+
+ممنوع القيادة في مدرجات المطار بدون إذن
+
+ممنوع سرقة ممتلكات الحكومة
+
+ممنوع تقوم تهرب أو تطلق مباشرة بعد الإنعاش</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="laws-panel" id="law-traffic">
+    <div class="laws-card">
+      <h3><span class="num">4</span>المناطق الآمنة</h3>
+      <p class="lead">السرعة، الإشارات، الوقوف الخاطئ، والمخالفات المرورية.</p>
+      <div class="laws-placeholder">
+        <div class="ico"><svg><use href="#ic-book"/></svg></div>
+        <h3>ممنوع القتل أو الإجرام فيها، وتشمل
+
+
+المستشفيات ومواقفها
+
+معارض السيارات والورش
+
+مراكز الشرطة
+
+مواقع الاطفاء
+
+الكراجات</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="laws-panel" id="law-gangs">
+    <div class="laws-card">
+      <h3><span class="num">5</span>القيادة والتعامل</h3>
+      <p class="lead">شروط تكوين العصابات، الحروب، والمناطق المحظورة.</p>
+      <div class="laws-placeholder">
+        <div class="ico"><svg><use href="#ic-book"/></svg></div>
+        <h3>ممنوع سواقة غير واقعية (سواقة GTA)
+
+إذا صدمت لازم تمثل الإصابة
+
+ممنوع الوقوف عند جثة لاعب
+
+احترم أولويات الشرطة</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMAND PANEL ===== -->
+<section id="command" class="wrap" style="padding:70px 0">
+  <div class="shead">
+    <span class="tag">دخول مقيّد</span>
+    <h2>لوحة القيادة</h2>
+    <p>مخصصة لأعضاء القيادة فقط — عرض وإدارة كامل الضباط والعساكر: الرتبة، اليونت، والنقاط.</p>
+  </div>
+
+  <div class="cmd-card">
+    <div id="cmdGate" class="cmd-gate">
+      <div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+      <h3 style="font-size:18px;font-weight:800;margin-bottom:6px">تسجيل دخول القيادة</h3>
+      <p style="color:var(--muted);font-size:13.5px;margin-bottom:20px">أدخل رمز القيادة الخاص بك للوصول لسجل الأفراد</p>
+      <input id="cmdPass" class="cmd-field" type="password" placeholder="رمز القيادة" autocomplete="off">
+      <div id="cmdErr" class="cmd-err"></div>
+      <button class="btn btn-primary" style="width:100%" onclick="cmdLogin()">دخول</button>
+      <div class="cmd-hint">هذا الدخول تحقق أولي داخل الصفحة فقط، وليس نظام حماية حقيقي — لا تضع بيانات حساسة فعلية هنا.</div>
+    </div>
+
+    <div id="cmdPanel" style="display:none">
+      <div class="cmd-top">
+        <div><h3>سجل الأفراد</h3><span id="cmdCount">0 فرد مسجّل</span></div>
+        <button class="cmd-logout" onclick="cmdLogout()">تسجيل الخروج</button>
+      </div>
+
+      <div class="cmd-form">
+        <input id="fName" placeholder="الاسم">
+        <select id="fSector" onchange="fillRankOptions()">
+          <option value="LSPD">LSPD</option>
+          <option value="SHERIFF">SHERIFF</option>
+          <option value="SAFD">SAFD</option>
+          <option value="EMS">EMS</option>
+        </select>
+        <select id="fRank"></select>
+        <input id="fUnit" placeholder="اليونت / الوحدة">
+        <input id="fPoints" type="number" placeholder="النقاط" value="0">
+        <button onclick="addOfficer()">إضافة</button>
+      </div>
+
+      <div class="cmd-tablewrap">
+        <table class="cmd-table">
+          <thead><tr><th>الاسم</th><th>القطاع</th><th>الرتبة</th><th>اليونت</th><th>النقاط</th><th>إجراءات</th></tr></thead>
+          <tbody id="cmdBody"></tbody>
+        </table>
+        <div id="cmdEmpty" class="cmd-empty" style="display:none">لا يوجد أفراد مسجلين بعد — أضف أول فرد من النموذج أعلاه.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-card">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo"><span class="mark">R</span>ROLL<span>.</span></div>
+        <p>الهيئة الرسمية لتنظيم القطاعات داخل السيرفر. منظومة متكاملة من القوانين والرتب والوحدات الميدانية.</p>
+      </div>
+      <div class="foot-col">
+        <h5>الأقسام</h5>
+        <a href="#operations">مركز العمليات</a>
+        <a href="#ranks">الرتب</a>
+        <a href="#laws">القوانين</a>
+        <a href="#command">لوحة القيادة</a>
+      </div>
+      <div class="foot-col">
+        <h5>روابط</h5>
+        <a href="#laws">القوانين العامة</a>
+        <a href="#">التقديم على القطاعات</a>
+        <a href="#">الدعم الفني</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>جميع الحقوق محفوظة © ROLL 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Sector Tabs ===== */
+document.querySelectorAll('.stab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active','gold','fire','ems'));
+    document.querySelectorAll('.sector-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const theme = tab.dataset.theme;
+    if(theme === 'gold') tab.classList.add('gold');
+    else if(theme === 'fire') tab.classList.add('fire');
+    else if(theme === 'ems') tab.classList.add('ems');
+    const panel = document.getElementById('sector-' + tab.dataset.sector);
+    if(panel) panel.classList.add('active');
+    document.getElementById('ranks').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+/* ===== Laws Tabs ===== */
+document.querySelectorAll('.lawstab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.lawstab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.laws-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('law-' + tab.dataset.law);
+    if(panel) panel.classList.add('active');
+  });
+});
+
+/* ===== Mobile Menu ===== */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{
+  const open = mobileMenu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+mobileMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    mobileMenu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  });
+});
+
+/* ===== Reveal on scroll ===== */
+const revealEls = document.querySelectorAll('.reveal');
+const revealIO = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      revealIO.unobserve(entry.target);
+    }
+  });
+},{threshold:.1, rootMargin:'0px 0px -50px 0px'});
+revealEls.forEach(el=>revealIO.observe(el));
+
+/* ===== Counters ===== */
+const counters = document.querySelectorAll('[data-count]');
+const counterIO = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseFloat(el.dataset.count);
+    const duration = 1500;
+    const start = performance.now();
+    const tick = (now)=>{
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if(p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    counterIO.unobserve(el);
+  });
+},{threshold:.6});
+counters.forEach(c=>counterIO.observe(c));
+
+/* ===== Command Panel ===== */
+const CMD_PASS = "roll-cmd-2026";
+const RANKS = {
+  LSPD: ["Rookie","Officers","Officers -2","Officers -3","Officers -3 + 1","Sergeant","Sergeant 2"],
+  SHERIFF: ["Rookie","Officers","Officers -2","Officers -3","Officers -3 + 1","Sergeant","Sergeant 2"],
+  SAFD: ["Firefighter","Engineer","Fire Lieutenant","Fire Captain","Battalion Chief","Deputy Chief","Fire Chief"],
+  EMS: ["EMT","Paramedic","Paramedic Supervisor","EMS Lieutenant","EMS Captain"]
+};
+const SECTOR_LABEL = {LSPD:"LSPD", SHERIFF:"SHERIFF", EMS:"EMS", SAFD:"SAFD"};
+
+function fillRankOptions(){
+  const sector = document.getElementById('fSector').value;
+  const rankSel = document.getElementById('fRank');
+  rankSel.innerHTML = RANKS[sector].map(r=>`<option value="${r}">${r}</option>`).join('');
+}
+function loadRoster(){ try{ return JSON.parse(localStorage.getItem('roll_roster')||'[]'); }catch(e){ return []; } }
+function saveRoster(list){ try{ localStorage.setItem('roll_roster', JSON.stringify(list)); }catch(e){} }
+function renderRoster(){
+  const list = loadRoster();
+  const body = document.getElementById('cmdBody');
+  const empty = document.getElementById('cmdEmpty');
+  document.getElementById('cmdCount').textContent = list.length + ' فرد مسجّل';
+  if(!list.length){ body.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  body.innerHTML = list.map((o,i)=>`
+    <tr>
+      <td>${o.name}</td>
+      <td><span class="cmd-badge ${o.sector}">${SECTOR_LABEL[o.sector]}</span></td>
+      <td>${o.rank}</td>
+      <td>${o.unit || '—'}</td>
+      <td>${o.points}</td>
+      <td><div class="cmd-actions">
+        <button class="edit" title="تعديل النقاط" onclick="editPoints(${i})">✎</button>
+        <button class="del" title="حذف" onclick="removeOfficer(${i})">✕</button>
+      </div></td>
+    </tr>`).join('');
+}
+function addOfficer(){
+  const name = document.getElementById('fName').value.trim();
+  if(!name){ document.getElementById('fName').focus(); return; }
+  const sector = document.getElementById('fSector').value;
+  const rank = document.getElementById('fRank').value;
+  const unit = document.getElementById('fUnit').value.trim();
+  const points = parseInt(document.getElementById('fPoints').value || '0', 10);
+  const list = loadRoster();
+  list.push({name, sector, rank, unit, points});
+  saveRoster(list);
+  document.getElementById('fName').value='';
+  document.getElementById('fUnit').value='';
+  document.getElementById('fPoints').value='0';
+  renderRoster();
+}
+function removeOfficer(i){ const list = loadRoster(); list.splice(i,1); saveRoster(list); renderRoster(); }
+function editPoints(i){
+  const list = loadRoster();
+  const val = prompt('تعديل نقاط ' + list[i].name, list[i].points);
+  if(val === null) return;
+  const n = parseInt(val, 10);
+  if(!isNaN(n)){ list[i].points = n; saveRoster(list); renderRoster(); }
+}
+function cmdLogin(){
+  const val = document.getElementById('cmdPass').value;
+  const err = document.getElementById('cmdErr');
+  if(val === CMD_PASS){
+    sessionStorage.setItem('roll_cmd_ok','1');
+    document.getElementById('cmdGate').style.display='none';
+    document.getElementById('cmdPanel').style.display='block';
+    fillRankOptions(); renderRoster();
+  } else { err.textContent = 'رمز القيادة غير صحيح'; }
+}
+function cmdLogout(){
+  sessionStorage.removeItem('roll_cmd_ok');
+  document.getElementById('cmdPanel').style.display='none';
+  document.getElementById('cmdGate').style.display='block';
+  document.getElementById('cmdPass').value='';
+}
+try{
+  if(sessionStorage.getItem('roll_cmd_ok') === '1'){
+    document.getElementById('cmdGate').style.display='none';
+    document.getElementById('cmdPanel').style.display='block';
+    fillRankOptions(); renderRoster();
+  }
+}catch(e){}
+</script>
+</body>
+</html>
